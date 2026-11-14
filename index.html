@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="robots" content="index, follow" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta
+      name="description"
+      content="Oyuki Yosselin, anfitriona Rednatura. Complementos naturales con atención personalizada y pedido por WhatsApp."
+    />
+    <title>Oyuki Yosselin Coob Antonio · Anfitrión Rednatura</title>
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Rednatura · Oyuki Yosselin" />
+    <meta property="og:title" content="Oyuki Yosselin Coob Antonio · Anfitrión Rednatura" />
+    <meta
+      property="og:description"
+      content="Complementos naturales con atención personalizada y pedido por WhatsApp."
+    />
+    <meta property="og:locale" content="es_MX" />
+    <meta name="twitter:card" content="summary" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23000'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Georgia,serif' font-size='34' fill='%23D4AF6A'%3ER%3C/text%3E%3C/svg%3E"
+    />
+
+    <!-- Tipografías sin bloquear el primer pintado -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap"
+      />
+    </noscript>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="progress" id="progress" aria-hidden="true"></div>
+
+    <!-- Barra superior fija: aparece al bajar y marca la sección activa -->
+    <header class="topbar" id="topbar">
+      <div class="wrap topbar-in">
+        <a class="brand" href="#hero">Rednatura</a>
+        <nav class="topnav" id="topnav" aria-label="Secciones">
+          <a href="#hero" data-sec="hero">Anfitrión</a>
+          <a href="#productos" data-sec="productos">Productos</a>
+          <a href="#facebook" data-sec="facebook" data-fb-only>Facebook</a>
+          <a href="#contacto" data-sec="contacto">Contacto</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- 1. ANFITRIÓN -->
+    <header class="hero" id="hero" data-live>
+      <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div class="dust" id="dust" aria-hidden="true"></div>
+      <div class="wrap">
+        <nav class="nav" aria-label="Principal">
+          <span class="brand">Rednatura</span>
+          <div class="nav-links">
+            <a class="nav-link" href="#hero">Anfitrión</a>
+            <a class="nav-link" href="#productos">Productos</a>
+            <a class="nav-link" id="waNav" href="#contacto">Contacto</a>
+            <a
+              class="nav-fb"
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visitar Facebook"
+              data-fb-url
+              data-fb-only
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.6-1.5h1.5V4.4c-.3 0-1.2-.1-2.2-.1-2.3 0-3.9 1.4-3.9 4v2.2H8v3h2.5V21z"
+                />
+              </svg>
+            </a>
+          </div>
+        </nav>
+
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <div class="monogram" id="monogram" aria-hidden="true">OY</div>
+            <p class="role" id="hostRole">Anfitrión Rednatura</p>
+            <h1 id="hostName">Oyuki Yosselin<span class="surname">Coob Antonio</span></h1>
+            <p class="tagline">Bienestar natural, con atención personalizada.</p>
+            <p class="lead" id="hostBio"></p>
+            <div class="actions">
+              <a class="btn gold" href="#productos">Ver catálogo</a>
+              <a class="btn ghost" id="waTop" href="#" target="_blank" rel="noopener noreferrer"
+                >Contactar por WhatsApp</a
+              >
+            </div>
+          </div>
+
+          <div class="art" aria-hidden="true">
+            <svg viewBox="0 0 400 480">
+              <defs>
+                <g id="leaf">
+                  <path d="M0 0C16-20 46-20 64 0C46 20 16 20 0 0Z" />
+                  <path d="M4 0H58" fill="none" stroke-opacity=".6" />
+                </g>
+                <radialGradient id="orbG" cx="50%" cy="50%" r="50%">
+                  <stop offset="0" stop-color="#FFF3D1" />
+                  <stop offset=".4" stop-color="#F2D9A0" stop-opacity=".85" />
+                  <stop offset="1" stop-color="#D4AF6A" stop-opacity="0" />
+                </radialGradient>
+                <linearGradient id="archG" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#F6E7BA" />
+                  <stop offset=".55" stop-color="#D4AF6A" />
+                  <stop offset="1" stop-color="#8C6A2C" />
+                </linearGradient>
+                <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+                  <feGaussianBlur stdDeviation="3.2" result="b" />
+                  <feMerge>
+                    <feMergeNode in="b" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+              </defs>
+
+              <path
+                class="arch"
+                d="M30 462V200A170 170 0 0 1 370 200V462Z"
+                fill="none"
+                stroke="url(#archG)"
+                stroke-width="1.4"
+              />
+              <path
+                d="M48 462V202A152 152 0 0 1 352 202V462Z"
+                fill="#0a0a0a"
+                stroke="#D4AF6A"
+                stroke-opacity=".3"
+              />
+              <circle class="orb" cx="200" cy="72" r="8" fill="#FFF3D1" filter="url(#glow)" />
+
+              <g class="plant">
+                <path
+                  class="stem"
+                  d="M200 458C186 362 222 272 204 126"
+                  fill="none"
+                  stroke="#D4AF6A"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                />
+                <g
+                  fill="#D4AF6A"
+                  fill-opacity=".12"
+                  stroke="#D4AF6A"
+                  stroke-width="1.6"
+                  stroke-linejoin="round"
+                >
+                  <use class="lf" style="--d: 0.9s" href="#leaf" transform="translate(194 410) rotate(-32) scale(1.15)" />
+                  <use class="lf" style="--d: 1s" href="#leaf" transform="translate(196 382) rotate(-148) scale(1.15)" />
+                  <use class="lf" style="--d: 1.2s" href="#leaf" transform="translate(204 337) rotate(-32) scale(1)" />
+                  <use class="lf" style="--d: 1.3s" href="#leaf" transform="translate(206 302) rotate(-148) scale(1)" />
+                  <use class="lf" style="--d: 1.5s" href="#leaf" transform="translate(211 257) rotate(-32) scale(.88)" />
+                  <use class="lf" style="--d: 1.6s" href="#leaf" transform="translate(210 224) rotate(-148) scale(.88)" />
+                  <use class="lf" style="--d: 1.8s" href="#leaf" transform="translate(206 184) rotate(-32) scale(.72)" />
+                  <use class="lf" style="--d: 1.9s" href="#leaf" transform="translate(205 154) rotate(-148) scale(.72)" />
+                  <use class="lf" style="--d: 2.1s" href="#leaf" transform="translate(203 128) rotate(-90) scale(.6)" />
+                </g>
+              </g>
+            </svg>
+          </div>
+        </div>
+
+        <ul class="assure">
+          <li><b>Atención personalizada</b><span>Orientación según lo que usted busca.</span></li>
+          <li><b>Solicitud sencilla</b><span>Seleccione y envíe su pedido por WhatsApp.</span></li>
+          <li><b>Origen natural</b><span>Complementos a base de plantas y nutrientes.</span></li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- Cinta de categorías -->
+    <div class="marquee" aria-hidden="true" data-live>
+      <div class="track">
+        <span>Digestivo</span><span>Estrés y descanso</span><span>Energía y café</span
+        ><span>Peso y metabolismo</span><span>Corazón</span><span>Mujer y hombre</span
+        ><span>Huesos</span><span>Defensas</span><span>Niños</span><span>Piel</span>
+        <span>Digestivo</span><span>Estrés y descanso</span><span>Energía y café</span
+        ><span>Peso y metabolismo</span><span>Corazón</span><span>Mujer y hombre</span
+        ><span>Huesos</span><span>Defensas</span><span>Niños</span><span>Piel</span>
+      </div>
+    </div>
+
+    <main>
+      <!-- 2. PRODUCTOS -->
+      <section class="catalog" id="productos">
+        <div class="wrap">
+          <p class="eyebrow reveal">Catálogo</p>
+          <h2 class="reveal">Productos</h2>
+          <p class="sub reveal" style="--i: 1">
+            Seleccione los productos de su interés y envíe su solicitud. Confirmaré disponibilidad y
+            precio.
+          </p>
+          <div class="chipbar" id="chipbar">
+            <div
+              class="chips reveal"
+              style="--i: 2"
+              id="chips"
+              role="group"
+              aria-label="Filtrar por necesidad"
+            ></div>
+          </div>
+          <div class="grid" id="grid"></div>
+          <p class="note reveal">
+            Los productos Rednatura son complementos alimenticios y no sustituyen un medicamento ni
+            una dieta variada. La información de cada producto proviene de su ficha. Si se encuentra en
+            tratamiento, en embarazo o tiene una condición de salud, consulte a su médico antes de
+            consumirlos.
+          </p>
+        </div>
+      </section>
+
+      <!-- 3. FACEBOOK -->
+      <section class="fb" id="facebook" aria-labelledby="fbTitle" data-fb-only>
+        <div class="wrap">
+          <div class="fb-card reveal" data-live>
+            <div class="fb-glyph" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.6-1.5h1.5V4.4c-.3 0-1.2-.1-2.2-.1-2.3 0-3.9 1.4-3.9 4v2.2H8v3h2.5V21z"
+                />
+              </svg>
+            </div>
+            <div class="fb-copy">
+              <p class="eyebrow left">Comunidad</p>
+              <h2 id="fbTitle">Visite mi página de Facebook</h2>
+              <p>
+                Conozca más de Rednatura, manténgase al tanto de las novedades y escríbame por ahí
+                cuando lo prefiera.
+              </p>
+              <a
+                class="btn gold fb-btn"
+                id="fbBtn"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-fb-url
+                >Ir a mi Facebook</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. CONTACTO -->
+      <div id="contacto">
+        <section class="steps">
+          <div class="wrap">
+            <p class="eyebrow reveal">Proceso</p>
+            <h2 class="reveal">Cómo solicitar su pedido</h2>
+            <ol class="steps-list">
+              <li class="reveal" style="--i: 0">
+                <span class="n">1</span><b>Seleccione</b>
+                <p>Agregue a su pedido los productos que le interesen.</p>
+              </li>
+              <li class="reveal" style="--i: 1">
+                <span class="n">2</span><b>Envíe su solicitud</b>
+                <p>Su lista llega a mi WhatsApp, redactada y lista para revisar.</p>
+              </li>
+              <li class="reveal" style="--i: 2">
+                <span class="n">3</span><b>Confirmación</b>
+                <p>Le indico disponibilidad y precio, y acordamos la entrega.</p>
+              </li>
+            </ol>
+          </div>
+        </section>
+
+        <section class="cta">
+          <div class="wrap cta-in">
+            <svg class="orn reveal" viewBox="0 0 160 14" aria-hidden="true">
+              <path d="M0 7H66M94 7H160" stroke="#D4AF6A" stroke-opacity=".6" />
+              <path d="M80 1l6 6-6 6-6-6z" fill="none" stroke="#D4AF6A" />
+            </svg>
+            <p class="eyebrow reveal">Contacto</p>
+            <h2 class="reveal" style="--i: 1">¿Necesita orientación?</h2>
+            <p class="reveal" style="--i: 2">Con gusto le recomiendo por dónde comenzar.</p>
+            <a
+              class="btn gold reveal"
+              style="--i: 3"
+              id="waCta"
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Contactar a Oyuki</a
+            >
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- 5. FOOTER -->
+    <footer class="foot">
+      <div class="wrap">
+        <div class="foot-top">
+          <span class="brand">Rednatura</span>
+          <nav class="foot-nav" aria-label="Secundaria">
+            <a href="#hero">Anfitrión</a><a href="#productos">Productos</a
+            ><a href="#contacto">Contacto</a
+            ><a href="#" target="_blank" rel="noopener noreferrer" data-fb-url data-fb-only>Facebook</a>
+          </nav>
+        </div>
+        <p>
+          Página independiente de una anfitriona Rednatura. Las marcas y nombres de productos
+          pertenecen a sus titulares.
+        </p>
+      </div>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <!-- Botones flotantes: volver arriba (izquierda), WhatsApp y pedido (derecha) -->
+    <button class="totop" id="toTop" type="button" aria-label="Volver arriba">
+      <svg class="ring" viewBox="0 0 48 48" aria-hidden="true">
+        <circle class="trk" cx="24" cy="24" r="21" />
+        <circle class="bar" id="toTopBar" cx="24" cy="24" r="21" />
+      </svg>
+      <svg
+        class="arrow"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.6"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M12 19V5M5 12l7-7 7 7" />
+      </svg>
+    </button>
+    <div class="dock" id="dock">
+      <a
+        class="wa"
+        id="waFloat"
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Escribir por WhatsApp"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.23 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.57.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.23-.17-.48-.29z"
+          />
+        </svg>
+        <span class="wa-tip">Escríbeme</span>
+      </a>
+    </div>
+
+    <button class="fab" id="fab" type="button" aria-label="Abrir mi pedido" aria-haspopup="dialog">
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z" />
+        <path d="M9 8V6.5a3 3 0 0 1 6 0V8" />
+      </svg>
+      <span>Mi pedido</span>
+      <span class="count" id="fabCount" aria-hidden="true">0</span>
+    </button>
+
+    <div class="zoom" id="zoom" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Ficha del producto">
+      <button class="zoom-close" id="zoomClose" type="button" aria-label="Cerrar">✕</button>
+      <img id="zoomImg" alt="" />
+    </div>
+
+    <div class="backdrop" id="backdrop"></div>
+    <aside
+      class="drawer"
+      id="drawer"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="drawerTitle"
+      aria-hidden="true"
+    >
+      <div class="d-head">
+        <div>
+          <h2 id="drawerTitle">Mi pedido</h2>
+          <p id="drawerSub"></p>
+        </div>
+        <button class="d-close" id="dClose" type="button" aria-label="Cerrar mi pedido">✕</button>
+      </div>
+      <div class="d-body" id="dBody"></div>
+      <div class="d-foot" id="dFoot"></div>
+    </aside>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
