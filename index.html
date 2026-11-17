@@ -57,6 +57,8 @@
         <a class="brand" href="#hero">Rednatura</a>
         <nav class="topnav" id="topnav" aria-label="Secciones">
           <a href="#hero" data-sec="hero">Anfitrión</a>
+          <a href="#fundadores" data-sec="fundadores">Fundadores</a>
+          <a href="#destacados" data-sec="destacados">Destacados</a>
           <a href="#productos" data-sec="productos">Productos</a>
           <a href="#facebook" data-sec="facebook" data-fb-only>Facebook</a>
           <a href="#contacto" data-sec="contacto">Contacto</a>
@@ -73,6 +75,7 @@
           <span class="brand">Rednatura</span>
           <div class="nav-links">
             <a class="nav-link" href="#hero">Anfitrión</a>
+            <a class="nav-link" href="#fundadores">Fundadores</a>
             <a class="nav-link" href="#productos">Productos</a>
             <a class="nav-link" id="waNav" href="#contacto">Contacto</a>
             <a
@@ -188,20 +191,155 @@
       </div>
     </header>
 
+    <!-- 2. FUNDADORES -->
+    <section class="founders" id="fundadores" aria-labelledby="fdTitle" data-live>
+      <div class="fd-bg" aria-hidden="true"><i></i><i></i></div>
+      <div class="wrap fd-grid">
+        <div class="fd-stage reveal">
+          <div class="fd-rings" aria-hidden="true"><i></i><i></i><i></i></div>
+          <img
+            class="fd-photo"
+            src="img/fundadores.webp"
+            width="959"
+            height="895"
+            alt="Ing. Alberto Mares y Sandra Amador, fundadores de Rednatura"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="fd-name l"><b>Ing. Alberto Mares</b><span>Presidente</span></div>
+          <div class="fd-name r"><b>Sandra Amador</b><span>CEO</span></div>
+        </div>
+
+        <div class="fd-copy">
+          <p class="eyebrow left reveal">La empresa detrás de la marca</p>
+          <h2 id="fdTitle" class="reveal" style="--i: 1">
+            Nuestros <span class="gold-text">fundadores</span>
+          </h2>
+          <p class="fd-lead reveal" style="--i: 2">Empresarios mexicanos con una misión clara:</p>
+          <p class="fd-mission reveal" style="--i: 3">¡Transformar la vida de las personas!</p>
+
+          <ul class="fd-xp">
+            <li class="reveal" style="--i: 2">
+              <b><span data-count="30">30</span></b>
+              <span>años de experiencia en la industria de suplementos</span>
+            </li>
+            <li class="reveal" style="--i: 3">
+              <b><span data-count="15">15</span></b>
+              <span>años en la industria de redes de mercadeo</span>
+            </li>
+          </ul>
+
+          <ul class="fd-stats">
+            <li class="reveal" style="--i: 0">
+              <b data-count="4">4</b><span>países con presencia</span>
+            </li>
+            <li class="reveal" style="--i: 1">
+              <b data-count="500000" data-prefix="+">+500,000</b><span>socios afiliados</span>
+            </li>
+            <li class="reveal" style="--i: 2">
+              <b data-count="500" data-prefix="+">+500</b><span>colaboradores</span>
+            </li>
+            <li class="reveal" style="--i: 3">
+              <b data-count="46">46</b><span>centros de distribución</span>
+            </li>
+            <li class="reveal" style="--i: 4">
+              <b data-count="47" data-prefix="+">+47</b><span>productos de alta calidad</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <!-- Cinta de categorías -->
     <div class="marquee" aria-hidden="true" data-live>
       <div class="track">
         <span>Digestivo</span><span>Estrés y descanso</span><span>Energía y café</span
-        ><span>Peso y metabolismo</span><span>Corazón</span><span>Mujer y hombre</span
+        ><span>Peso y metabolismo</span><span>Corazón</span><span>Mujer</span><span>Caballeros</span
         ><span>Huesos</span><span>Defensas</span><span>Niños</span><span>Piel</span>
         <span>Digestivo</span><span>Estrés y descanso</span><span>Energía y café</span
-        ><span>Peso y metabolismo</span><span>Corazón</span><span>Mujer y hombre</span
+        ><span>Peso y metabolismo</span><span>Corazón</span><span>Mujer</span><span>Caballeros</span
         ><span>Huesos</span><span>Defensas</span><span>Niños</span><span>Piel</span>
       </div>
     </div>
 
     <main>
-      <!-- 2. PRODUCTOS -->
+      <!-- DESTACADOS (solo caballeros) -->
+      <section class="feat" id="destacados" aria-labelledby="featTitle" data-live>
+        <div class="feat-glow" aria-hidden="true"><i></i><i></i></div>
+        <div class="wrap">
+          <p class="eyebrow reveal">Solo para caballeros</p>
+          <h2 id="featTitle" class="reveal" style="--i: 1">Destacados</h2>
+          <div class="feat-grid">
+            <article class="feat-card reveal" style="--i: 1">
+              <button class="feat-pic" type="button" data-zoom="dugran-x" aria-label="Ampliar la imagen de Dugran-X">
+                <img
+                  src="img/dugran-x.jpeg"
+                  srcset="img/sm/dugran-x.webp 640w, img/dugran-x.jpeg 1024w"
+                  sizes="(max-width: 780px) 92vw, 520px"
+                  width="1024"
+                  height="1280"
+                  alt="Dugran-X, nueva imagen. Misma fórmula, ahora con 10 cápsulas"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </button>
+              <div class="feat-body">
+                <div class="pills"><span class="pill hot">Nuevo</span><span class="pill">Solo caballeros</span></div>
+                <div class="dx-info">
+                  <div>
+                    <h3>Ingredientes</h3>
+                    <ul>
+                      <li><img src="img/dx-ing-horny.webp" alt="" width="56" height="56" loading="lazy" /><span>Extracto seco de hoja y tallo de horny goat</span></li>
+                      <li><img src="img/dx-ing-arginina.webp" alt="" width="56" height="56" loading="lazy" /><span>L-arginina base</span></li>
+                      <li><img src="img/dx-ing-glutamina.webp" alt="" width="56" height="56" loading="lazy" /><span>Glutamina</span></li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3>Beneficios</h3>
+                    <ul>
+                      <li><img src="img/dx-ben-afrodisiaco.webp" alt="" width="56" height="56" loading="lazy" /><span>Útil como afrodisíaco</span></li>
+                      <li><img src="img/dx-ben-deseo.webp" alt="" width="56" height="56" loading="lazy" /><span>Restaura el deseo sexual</span></li>
+                      <li><img src="img/dx-ben-acne.webp" alt="" width="56" height="56" loading="lazy" /><span>Ayuda a curar lesiones de acné y evita recurrencia</span></li>
+                    </ul>
+                  </div>
+                </div>
+                <ul class="feat-opts" data-opts="dugran-x"></ul>
+              </div>
+            </article>
+
+            <article class="feat-card reveal" style="--i: 2">
+              <button class="feat-pic" type="button" data-zoom="flussorin" style="background:linear-gradient(#a9d1c6,#f1f7f7)" aria-label="Ampliar la ficha de Flussorin NF">
+                <img
+                  src="img/flussorin.jpeg"
+                  srcset="img/sm/flussorin.webp 640w, img/flussorin.jpeg 1080w"
+                  sizes="(max-width: 780px) 92vw, 520px"
+                  width="1080"
+                  height="1151"
+                  alt="Ficha de Flussorin NF: próstata y vías urinarias"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </button>
+              <div class="feat-body">
+                <div class="pills"><span class="pill">Solo caballeros</span></div>
+                <div class="dx-info one">
+                  <div>
+                    <h3>Ingredientes</h3>
+                    <ul class="chips-l">
+                      <li><span>Semilla de calabaza</span></li><li><span>Arándano</span></li><li><span>Uva ursi</span></li>
+                      <li><span>Licopeno</span></li><li><span>Equinácea</span></li><li><span>Gluconato de zinc</span></li>
+                    </ul>
+                  </div>
+                </div>
+                <ul class="feat-opts" data-opts="flussorin"></ul>
+              </div>
+            </article>
+          </div>
+          <p class="feat-note reveal">Confirmaré disponibilidad y precio por WhatsApp.</p>
+        </div>
+      </section>
+
+      <!-- 3. PRODUCTOS -->
       <section class="catalog" id="productos">
         <div class="wrap">
           <p class="eyebrow reveal">Catálogo</p>
@@ -229,7 +367,7 @@
         </div>
       </section>
 
-      <!-- 3. FACEBOOK -->
+      <!-- 4. FACEBOOK -->
       <section class="fb" id="facebook" aria-labelledby="fbTitle" data-fb-only>
         <div class="wrap">
           <div class="fb-card reveal" data-live>
@@ -261,7 +399,7 @@
         </div>
       </section>
 
-      <!-- 4. CONTACTO -->
+      <!-- 5. CONTACTO -->
       <div id="contacto">
         <section class="steps">
           <div class="wrap">
@@ -307,13 +445,13 @@
       </div>
     </main>
 
-    <!-- 5. FOOTER -->
+    <!-- 6. FOOTER -->
     <footer class="foot">
       <div class="wrap">
         <div class="foot-top">
           <span class="brand">Rednatura</span>
           <nav class="foot-nav" aria-label="Secundaria">
-            <a href="#hero">Anfitrión</a><a href="#productos">Productos</a
+            <a href="#hero">Anfitrión</a><a href="#fundadores">Fundadores</a><a href="#productos">Productos</a
             ><a href="#contacto">Contacto</a
             ><a href="#" target="_blank" rel="noopener noreferrer" data-fb-url data-fb-only>Facebook</a>
           </nav>

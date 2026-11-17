@@ -22,6 +22,17 @@ const HOST = {
 };
 
 const PRODUCTS = [
+  {
+    id: "dugran-x",
+    name: "Dugran-X",
+    cat: "Caballeros",
+    tag: "Horny goat, L-arginina y glutamina",
+    w: 1024,
+    h: 1280,
+    isNew: true,
+    sub: "Nueva imagen · sobre con 10 cápsulas de 450 mg",
+  },
+  { id: "flussorin", name: "Flussorin NF", cat: "Caballeros", tag: "Próstata y vías urinarias", w: 1080, h: 1151, sub: "Frasco con 60 cápsulas de 500 mg" },
   { id: "probi-go", name: "Probi GO!", cat: "Digestivo", tag: "Probióticos y prebióticos", w: 1080, h: 1121 },
   { id: "zendra", name: "Zendra", cat: "Descanso", tag: "Ashwagandha y melena de león", w: 1080, h: 1133 },
   { id: "fembalanz", name: "Fembalanz", cat: "Intimo", tag: "Probióticos femeninos", w: 1080, h: 1130 },
@@ -57,7 +68,6 @@ const PRODUCTS = [
   { id: "levene", name: "Levené NF", cat: "Corazon", tag: "Circulación", w: 1080, h: 1127 },
   { id: "blex", name: "Blex", cat: "Huesos", tag: "Articulaciones", w: 1080, h: 1143 },
   { id: "uc-ii", name: "UC-II NF", cat: "Huesos", tag: "Colágeno tipo II", w: 1080, h: 1128 },
-  { id: "flussorin", name: "Flussorin NF", cat: "Intimo", tag: "Próstata y vías urinarias", w: 1080, h: 1151 },
   { id: "senzadol", name: "Senzadol", cat: "Huesos", tag: "Alivio muscular y articular", w: 1080, h: 1116 },
   { id: "renaiss-serum", name: "Renaíss Serum", cat: "Piel", tag: "Sérum facial", w: 1080, h: 1161 },
 ];
@@ -69,6 +79,7 @@ const CATS = [
   "Peso",
   "Corazon",
   "Intimo",
+  "Caballeros",
   "Huesos",
   "Defensas",
   "Ninos",
@@ -81,7 +92,8 @@ const CAT_LABEL = {
   Energia: "Energía y café",
   Peso: "Peso y metabolismo",
   Corazon: "Corazón",
-  Intimo: "Mujer y hombre",
+  Intimo: "Mujer",
+  Caballeros: "Caballeros",
   Huesos: "Huesos",
   Defensas: "Defensas",
   Ninos: "Niños",
@@ -270,7 +282,8 @@ function renderGrid() {
   ui.grid.innerHTML = list
     .map(
       (p, idx) => `
-    <article class="card reveal${cart.has(p.id) ? " incart" : ""}" style="--i:${idx % 4}" data-card="${p.id}">
+    <article class="card reveal${cart.has(p.id) ? " incart" : ""}${p.isNew ? " isnew" : ""}" style="--i:${idx % 4}" data-card="${p.id}">
+      ${p.isNew ? '<span class="newtag" aria-label="Producto nuevo">Nuevo</span>' : ""}
       <button class="pic" type="button" data-zoom="${p.id}" aria-label="Ampliar la ficha de ${p.name}">
         <img src="${thumbSrc(p)}" alt="Ficha de ${p.name}: ${p.tag}" width="${p.w}" height="${p.h}" loading="lazy" decoding="async" onload="this.classList.add('ld')" onerror="if(!this.dataset.f){this.dataset.f=1;this.src='${picSrc(p)}'}else{this.classList.add('ld')}" />
       </button>
@@ -283,6 +296,27 @@ function renderGrid() {
     )
     .join("");
   watchReveals();
+}
+
+/* Destacados (solo caballeros): cada lista [data-opts] muestra sus presentaciones con control de cantidad */
+function renderSpot() {
+  document.querySelectorAll("[data-opts]").forEach((box) => {
+    box.innerHTML = box.dataset.opts
+      .split(",")
+      .map((id, i) => PRODUCTS.find((x) => x.id === id))
+      .filter(Boolean)
+      .map(
+        (p, i) => `
+    <li class="feat-opt${cart.has(p.id) ? " incart" : ""}">
+      <button class="fo-pic" type="button" data-zoom="${p.id}" aria-label="Ampliar la ficha de ${p.name}">
+        <img src="${thumbSrc(p)}" alt="" width="${p.w}" height="${p.h}" loading="lazy" decoding="async" />
+      </button>
+      <div class="fo-info"><b>${p.name}</b><span>${p.sub || p.tag}</span></div>
+      <div class="fo-ctrl">${controls(p)}</div>
+    </li>`,
+      )
+      .join("");
+  });
 }
 
 function updateCard(id, act, focus) {
@@ -302,6 +336,7 @@ function updateCard(id, act, focus) {
    PEDIDO
    ============================================================ */
 function renderCart() {
+  renderSpot();
   const items = [...cart.keys()].map((id) => PRODUCTS.find((p) => p.id === id)).filter(Boolean);
   const total = totalPieces();
   const fab = ui.fab;
@@ -510,13 +545,20 @@ document.addEventListener("click", (e) => {
 function change(b, id, act, inDrawer) {
   const q = cart.get(id) || 0;
   const card = b.closest(".card");
+  const inSpot = !!b.closest(".feat");
   if (act === "add") cart.set(id, 1);
   if (act === "plus") cart.set(id, Math.min(q + 1, 99));
   if (act === "minus") q <= 1 ? cart.delete(id) : cart.set(id, q - 1);
   if (act === "remove") cart.delete(id);
   saveCart();
-  updateCard(id, act === "remove" ? "add" : act, !inDrawer);
+  updateCard(id, act === "remove" ? "add" : act, !inDrawer && !inSpot);
   renderCart();
+  if (inSpot) {
+    const sb =
+      document.querySelector(`.feat [data-id="${id}"][data-act="${cart.has(id) ? act : "add"}"]`) ||
+      document.querySelector(`.feat [data-id="${id}"]`);
+    if (sb) sb.focus({ preventScroll: true });
+  }
   if (!inDrawer && (act === "add" || act === "plus")) {
     if (card && motionOK) {
       card.classList.remove("flash");
@@ -744,3 +786,38 @@ if (window.matchMedia("(hover: hover)").matches) {
     { passive: true },
   );
 }
+
+/* Fundadores: los números suben hasta su valor al entrar en pantalla */
+(function () {
+  const els = [...document.querySelectorAll("[data-count]")];
+  if (!els.length) return;
+  const fmt = (n, pre) => (pre || "") + n.toLocaleString("es-MX");
+  const final = (el) => (el.textContent = fmt(+el.dataset.count, el.dataset.prefix));
+  if (!motionOK || !("IntersectionObserver" in window)) {
+    els.forEach(final);
+    return;
+  }
+  els.forEach((el) => (el.textContent = fmt(0, el.dataset.prefix)));
+  const run = (el) => {
+    const to = +el.dataset.count,
+      pre = el.dataset.prefix,
+      dur = 1700,
+      t0 = performance.now();
+    (function step(t) {
+      const k = Math.min((t - t0) / dur, 1),
+        e = 1 - Math.pow(1 - k, 3);
+      el.textContent = fmt(Math.round(to * e), pre);
+      if (k < 1) requestAnimationFrame(step);
+    })(t0);
+  };
+  const co = new IntersectionObserver(
+    (entries) =>
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        co.unobserve(e.target);
+        run(e.target);
+      }),
+    { threshold: 0.5 },
+  );
+  els.forEach((el) => co.observe(el));
+})();
